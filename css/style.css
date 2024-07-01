@@ -71,3 +71,37 @@ nav>a {
 .divider {
     flex: 2;
 }
+
+.Contact Us {
+    width: 500px;
+    margin-top: 50px;
+    margin-left: 30%;
+    border-radius: 5px;
+    border: 2px solid ;
+    padding: 20px;
+}
+
+.form-input {
+    width: 30%;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+}
+
+
+.send {
+    color: black ;
+    background-color: antiquewhite;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}

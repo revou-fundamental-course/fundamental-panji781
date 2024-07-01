@@ -15,8 +15,8 @@
         <nav>
             <a>Home</a>
             <a href="#our-profile">Our Profile</a>
-            <a>Portofolio</a>
-            <a>Contact Us</a>
+            <a href="#Portfolio">Portfolio</a>
+            <a href="#Contact Us">Contact Us</a>
 
 
         </nav>
@@ -72,7 +72,7 @@
 
     <!-- Ini Portfolio Content-->
 
-        <section>
+        <section id="Portfolio">
             <header>
                 <h1>Portfolio</h1>
             </header>
@@ -86,38 +86,44 @@
         <hr size="5px"/>
 
     <!-- Ini Message Us Content-->
-        <section>
+        <section id="Contact Us">
             <header>
                 <h1>Contact Us</h1>
             </header>
 
-            <form action=""method="post">
-            
-                <label for="Nama">Nama :                   </label>
-                <input id="Nama" type="text" />
+            <div class="Contact Us">
 
-                <br>
-                <label for="Tanggal Lahir">Tanggal Lahir : </label>
-                <input id="Tanggal Lahir" type="date" />
+                <form action="/action_page.php">
 
-                <br>
-                <label for="Jenis Kelamin">Jenis Kelamin : </label>
 
+                    <label for="Nama">Nama : </label>
+                    <input id="Nama" type="text" name="Nama" class="form-input" placeholder="your name.." autocomplete="off"/><br>
     
-                <input type="radio" id="Laki-Laki" name="Jenis Kelamin" value="Laki-Laki"/>
-                <label for="Jenis Kelamin">Laki-Laki </label>
-                
-                <input type="radio" id="Perempuan" name="Jenis Kelamin" value="Perempuan" />
-                <label for="Jenis Kelamin">Perempuan </label>
+                    <br>
+                    <label for="Tanggal Lahir">Tanggal Lahir : </label>
+                    <input id="Tanggal Lahir" type="date" name="Tanggal Lahir" class="form-input"  autocomplete="off" /><br>
+    
+                    <br>
+                    <label for="Jenis Kelamin">Jenis Kelamin : </label>
+    
+        
+                    <input type="radio" id="Laki-Laki" name="Jenis Kelamin" value="Laki-Laki"  autocomplete="off"/>
+                    <label for="Jenis Kelamin">Laki-Laki </label>
+                    
+                    <input type="radio" id="Perempuan" name="Jenis Kelamin" value="Perempuan"  autocomplete="off" />
+                    <label for="Jenis Kelamin">Perempuan </label>
+    
+                    <br>
+                    <label for="Pesan">Pesan : </label>
+                    <textarea name="Pesan" class="form-input" placeholder="pesan.." autocomplete="off"></textarea>
 
-                <br>
-                <label for="Pesan">Pesan : </label>
-                <textarea rows="8" cols="64">Pesan :</textarea>
 
-                <br>
-                <input type="submit" value="submit" />
-                
-            </form>
+                    <input type="submit" name="send" class="send" value="send" />
+                    
+                </form>
+
+            </div>
+            
 
             
         </section>
