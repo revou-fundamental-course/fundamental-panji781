@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Panji</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["fname"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+        </script>
+
 </head>
 <body>
     <!-- Ini Header Nav-->
@@ -75,15 +86,73 @@
         <section id="Portfolio">
             <header>
                 <h1>Portfolio</h1>
+
+
             </header>
 
-            <article>
+            <article class="regular">
+                <h2>textbook</h2>
+
+                <label for="tbuser">Name:</label>
+                <input type="text" id="tbuser" placeholder="enter username" maxlength="10">
+
+                <br>
+                <br>
+
+                <label for="tlahir">Tanggal Lahir:</label>
+                <input type="date" id="tlahir" placeholder="enter tanggal lahir" maxlength="10">
+
+                <br>
+                <br>
+
+                <label for="Jkelamin">Jenis Kelamin:</label>
+                <input type="radio" id="Laki-Laki" name="JKelamin" if (isset($Jkelamin) && $Jkelamin=="Laki-Laki")  value="Laki-Laki" />
+                <label for="Jenis Kelamin">Laki-Laki </label>
+                    
+                <input type="radio" id="Perempuan" name="JKelamin" if (isset($Jkelamin) && $Jkelamin=="Perempuan")  value="Perempuan"/>
+                <label for="Jenis Kelamin">Perempuan </label>
+
+                <br>
+                <br>
+
+                <input type="button" id="btn1" value="Submit" class="Submit">
+
+                <p class="output" id="output1"></p>
+                <p class="output" id="output2"></p>
+                <p class="output" id="output3"></p>
+                <p class="output" id="output4"></p>
 
             </article>
+
+            <script>
+                const txt1 =document.getElementById('tbuser');
+                const txt2 =document.getElementById('tlahir');
+                const txt3 =document.getElementById('Laki-Laki');
+                const txt4 =document.getElementById('Perempuan');
+                const btn1 =document.getElementById('btn1');
+                const out1 =document.getElementById('output1');
+                const out2 =document.getElementById('output2');
+                const out3 =document.getElementById('output3');
+               
+
+                function fun1() {
+                    out1.innerHTML =txt1.value;
+                    out2.innerHTML =txt2.value;
+                    out3.innerHTML =txt3.value;
+                    
+
+                }
+
+                btn1.addEventListener('click',fun1);
+
+            </script>
+
+
         </section>
 
 
         <hr size="5px"/>
+
 
     <!-- Ini Message Us Content-->
         <section id="Contact Us">
@@ -91,39 +160,64 @@
                 <h1>Contact Us</h1>
             </header>
 
-            <div class="Contact Us">
-
+            <div class="container">
                 <form action="/action_page.php">
 
+    <!-- batas kolom-->
+                <div class="row">
+                  <div class="col-25">
+                    <label for="fname">Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  </div>
+                </div>
+    <!-- batas kolom-->
+                <div class="row">
+                  <div class="col-25">
+                    <label for="lname">Last Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                  </div>
+                </div>
+    <!-- batas kolom-->
+                <div class="row">
+                  <div class="col-25">
+                    <label for="Gender">Jenis Kelamin</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="radio" name="Gender" <?php if (isset($gender) && $gender=="Perempuan") echo "checked";?  value="Perempuan">Perempuan
+                    <input type="radio" name="Gender" <?php if (isset($gender) && $gender=="Laki-Laki") echo "checked";? value="Laki-Laki">Laki-Laki
+                  </div>
+                </div>
+    <!-- batas kolom-->            
+                <div class="row">
+                  <div class="col-25">
+                    <label for="TLahir">Tanggal Lahir</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="date" id="TLahir" name="Tanggal Lahir" placeholder="Lahir...">
+                  </div>
+                </div>
+    <!-- batas kolom-->            
+                <div class="row">
+                  <div class="col-25">
+                    <label for="pesan">Pesan</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea id="pesan" name="Pesan" placeholder="Pesan.." style="height:200px"></textarea>
+                  </div>
+                </div>
 
-                    <label for="Nama">Nama : </label>
-                    <input id="Nama" type="text" name="Nama" class="form-input" placeholder="your name.." autocomplete="off"/><br>
-    
-                    <br>
-                    <label for="Tanggal Lahir">Tanggal Lahir : </label>
-                    <input id="Tanggal Lahir" type="date" name="Tanggal Lahir" class="form-input"  autocomplete="off" /><br>
-    
-                    <br>
-                    <label for="Jenis Kelamin">Jenis Kelamin : </label>
-    
-        
-                    <input type="radio" id="Laki-Laki" name="Jenis Kelamin" value="Laki-Laki"  autocomplete="off"/>
-                    <label for="Jenis Kelamin">Laki-Laki </label>
-                    
-                    <input type="radio" id="Perempuan" name="Jenis Kelamin" value="Perempuan"  autocomplete="off" />
-                    <label for="Jenis Kelamin">Perempuan </label>
-    
-                    <br>
-                    <label for="Pesan">Pesan : </label>
-                    <textarea name="Pesan" class="form-input" placeholder="pesan.." autocomplete="off"></textarea>
-
-
-                    <input type="submit" name="send" class="send" value="send" />
-                    
+                
+                <br>
+                <div class="row">
+                  <input type="submit" value="Submit">
+                </div>
                 </form>
-
-            </div>
-            
+              </div>
+              
 
             
         </section>
