@@ -6,15 +6,6 @@
     <title>Portfolio Panji</title>
     <link rel="stylesheet" href="css/style.css">
 
-    <script>
-        function validateForm() {
-          let x = document.forms["myForm"]["fname"].value;
-          if (x == "") {
-            alert("Name must be filled out");
-            return false;
-          }
-        }
-        </script>
 
 </head>
 <body>
@@ -83,74 +74,11 @@
 
     <!-- Ini Portfolio Content-->
 
-        <section id="Portfolio">
+         <section id="Portfolio">
             <header>
                 <h1>Portfolio</h1>
-
-
             </header>
-
-            <article class="regular">
-                <h2>textbook</h2>
-
-                <label for="tbuser">Name:</label>
-                <input type="text" id="tbuser" placeholder="enter username" maxlength="10">
-
-                <br>
-                <br>
-
-                <label for="tlahir">Tanggal Lahir:</label>
-                <input type="date" id="tlahir" placeholder="enter tanggal lahir" maxlength="10">
-
-                <br>
-                <br>
-
-                <label for="Jkelamin">Jenis Kelamin:</label>
-                <input type="radio" id="Laki-Laki" name="JKelamin" if (isset($Jkelamin) && $Jkelamin=="Laki-Laki")  value="Laki-Laki" />
-                <label for="Jenis Kelamin">Laki-Laki </label>
-                    
-                <input type="radio" id="Perempuan" name="JKelamin" if (isset($Jkelamin) && $Jkelamin=="Perempuan")  value="Perempuan"/>
-                <label for="Jenis Kelamin">Perempuan </label>
-
-                <br>
-                <br>
-
-                <input type="button" id="btn1" value="Submit" class="Submit">
-
-                <p class="output" id="output1"></p>
-                <p class="output" id="output2"></p>
-                <p class="output" id="output3"></p>
-                <p class="output" id="output4"></p>
-
-            </article>
-
-            <script>
-                const txt1 =document.getElementById('tbuser');
-                const txt2 =document.getElementById('tlahir');
-                const txt3 =document.getElementById('Laki-Laki');
-                const txt4 =document.getElementById('Perempuan');
-                const btn1 =document.getElementById('btn1');
-                const out1 =document.getElementById('output1');
-                const out2 =document.getElementById('output2');
-                const out3 =document.getElementById('output3');
-               
-
-                function fun1() {
-                    out1.innerHTML =txt1.value;
-                    out2.innerHTML =txt2.value;
-                    out3.innerHTML =txt3.value;
-                    
-
-                }
-
-                btn1.addEventListener('click',fun1);
-
-            </script>
-
-
         </section>
-
-
         <hr size="5px"/>
 
 
@@ -160,72 +88,67 @@
                 <h1>Contact Us</h1>
             </header>
 
-            <div class="container">
-                <form action="/action_page.php">
-
-    <!-- batas kolom-->
-                <div class="row">
-                  <div class="col-25">
-                    <label for="fname">Name</label>
-                  </div>
-                  <div class="col-75">
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                  </div>
-                </div>
-    <!-- batas kolom-->
-                <div class="row">
-                  <div class="col-25">
-                    <label for="lname">Last Name</label>
-                  </div>
-                  <div class="col-75">
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                  </div>
-                </div>
-    <!-- batas kolom-->
-                <div class="row">
-                  <div class="col-25">
-                    <label for="Gender">Jenis Kelamin</label>
-                  </div>
-                  <div class="col-75">
-                    <input type="radio" name="Gender" <?php if (isset($gender) && $gender=="Perempuan") echo "checked";?  value="Perempuan">Perempuan
-                    <input type="radio" name="Gender" <?php if (isset($gender) && $gender=="Laki-Laki") echo "checked";? value="Laki-Laki">Laki-Laki
-                  </div>
-                </div>
-    <!-- batas kolom-->            
-                <div class="row">
-                  <div class="col-25">
-                    <label for="TLahir">Tanggal Lahir</label>
-                  </div>
-                  <div class="col-75">
-                    <input type="date" id="TLahir" name="Tanggal Lahir" placeholder="Lahir...">
-                  </div>
-                </div>
-    <!-- batas kolom-->            
-                <div class="row">
-                  <div class="col-25">
-                    <label for="pesan">Pesan</label>
-                  </div>
-                  <div class="col-75">
-                    <textarea id="pesan" name="Pesan" placeholder="Pesan.." style="height:200px"></textarea>
-                  </div>
-                </div>
-
-                
-                <br>
-                <div class="row">
-                  <input type="submit" value="Submit">
-                </div>
-                </form>
-              </div>
+            <form>
+              <table border="2">
+                  <tr>
+                      <td><label for="firstname">Firstname:</label></td>
+                      <td><input type="text" id="firstname" required></td>
+                  </tr>
+                  <tr>
+                      <td><label for="lastname">Lastname:</label></td>
+                      <td><input type="text" id="lastname" required></td>
+                  </tr>
+                  <tr>
+                      <td><label for="gender">Gender:</label></td>
+                      <td><input type="radio" id="gender" value="Male" required>Male
+                          <input type="radio" id="gender" value="female" required>Female</td>
+                    
+                  </tr> 
+                  <tr>
+                      <td><label for="message">Message:</label></td>
+                      <td><textarea id="message" required></textarea>
+                  </tr>
+                  <tr>
+                      <td rowspan="2">
+                          <input type="button" name="btn1" id="btn1" value="Submit">
+                      </td>
+                  </tr>
+                  
               
+                  <tr>
+                      <td>
+                          <p class="output1" id="output1"></p>
+                          <p class="output2" id="output2"></p>
+                          <p class="output3" id="output3"></p>
+                          <p class="output4" id="output4"></p>
+                  
+                      </td>
+                  </tr>
+              </table>
+              <script>
+                  const firstname = document.getElementById('firstname');
+                  const lastname = document.getElementById('lastname');
+                  const gender = document.getElementById('gender')
+                  const message = document.getElementById('message')
+                  const btn1 = document.getElementById('btn1');
+                  const output1 = document.getElementById('output1');
+                  const output2 = document.getElementById('output2');
+                  const output3 = document.getElementById('output3');
+                  const output4 = document.getElementById('output4');
 
-            
+                  function fun1() {
+                      output1.innerHTML = firstname.value;
+                      output2.innerHTML = lastname.value;
+                      output3.innerHTML = gender.value;
+                      output4.innerHTML = message.value;
+                  }
+
+                  btn1.addEventListener('click',fun1);
+              </script>
+          </form>
+      
         </section>
-
     </main>
-
-  
-
 
 </body>
 </html>
